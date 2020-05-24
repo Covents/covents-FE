@@ -6,12 +6,17 @@
                 <h4>SOCIAL / DISTANT</h4>
             </router-link>
         </button>
+        <Search />
     </nav>
 </template>
 
 <script>
+import Search from './Search'
 export default {
-    name: "nav"
+    name: "nav",
+    components: {
+        Search
+    }
 }
 </script>
 
