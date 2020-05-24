@@ -7,15 +7,19 @@
             </router-link>
         </button>
         <Search />
+        <Calendar />
     </nav>
 </template>
 
 <script>
-import Search from './Search'
+import Search from './Search';
+import Calendar from './Calendar'
+
 export default {
     name: "nav",
     components: {
-        Search
+        Search,
+        Calendar
     }
 }
 </script>
@@ -51,4 +55,5 @@ export default {
         font-size: 2em;
         letter-spacing: .15em;
     }
+
 </style>
