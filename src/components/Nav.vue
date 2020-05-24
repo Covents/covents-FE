@@ -8,18 +8,21 @@
         </button>
         <Search />
         <Calendar />
+        <YourEvents />
     </nav>
 </template>
 
 <script>
 import Search from './Search';
-import Calendar from './Calendar'
+import Calendar from './Calendar';
+import YourEvents from './YourEvents';
 
 export default {
     name: "nav",
     components: {
         Search,
-        Calendar
+        Calendar,
+        YourEvents
     }
 }
 </script>

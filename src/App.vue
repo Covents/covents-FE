@@ -47,8 +47,6 @@ export default {
 
 /* Calendar Styling */
   
-
-
   .vuecal__menu, .vuecal__cell-events-count {
     background-color: #ffffff;
   }
