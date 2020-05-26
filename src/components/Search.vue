@@ -46,7 +46,7 @@ export default {
         border-radius: 10px 0 0 10px;
         height: 35px;
         padding: 0px 10px;
-        width: 80%;
+        width: 70%;
         color: #EF476F;
     }
 
