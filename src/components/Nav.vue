@@ -32,7 +32,6 @@ export default {
        background: #118AB2;
        height: 100vh;
        width: 22%;
-       position: sticky;
        display: flex;
        flex-flow: column nowrap;
        align-items: center;

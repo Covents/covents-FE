@@ -1,18 +1,18 @@
  <template>
   <div id="app">
-    <div>
       <Nav /> 
-    </div>
-    <router-view/>
+      <EventsContainer />
   </div>
 </template>
 
 <script>
 import Nav from './components/Nav'
+import EventsContainer from './components/EventsContainer'
 export default {
   name: "app",
   components: {
-    Nav
+    Nav,
+    EventsContainer
   }
 }
 </script>
@@ -26,14 +26,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    height: 100%;
-    width: 100vw;
-    background: #ffffff;
-    display: flex;
-    flex-flow: column wrap;
-  }
-
   h1 {
     font-family: 'Playfair Display', serif;
   }
@@ -43,6 +35,14 @@ export default {
   h4,
   p {
     font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  #app {
+    height: 100vh;
+    width: 100vw;
+    background: #ffffff;
+    display: flex;
+    flex-flow: row nowrap;
   }
 
 /* Calendar Styling */
