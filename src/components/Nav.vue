@@ -7,21 +7,21 @@
             </router-link>
         </button>
         <Search />
-        <Calendar />
+        <CalendarContainer />
         <YourEvents />
     </nav>
 </template>
 
 <script>
 import Search from './Search';
-import Calendar from './Calendar';
+import CalendarContainer from './CalendarContainer';
 import YourEvents from './YourEvents';
 
 export default {
     name: "nav",
     components: {
         Search,
-        Calendar,
+        CalendarContainer,
         YourEvents
     }
 }
