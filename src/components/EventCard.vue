@@ -78,6 +78,10 @@ a {
   cursor: pointer;
 }
 
+.event-details-btn:hover {
+  background: #06D6A0;
+}
+
 .unfilled-heart {
   border: none;
   height: 4em;
