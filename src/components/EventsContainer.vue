@@ -1,8 +1,10 @@
 <template>
   <div class="events-container">
     <h1>coming up:</h1>
-    <EventCard v-bind:key="event.id" v-for="event in events" v-bind:event="events"/>
-  </div>
+    <div v-bind:key="event.id" v-for="event in events">
+      <EventCard v-bind:event="event"/>
+    </div>
+  </div> 
 </template>
 
 <script>

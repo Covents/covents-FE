@@ -3,16 +3,24 @@
     <button class="heart-btn"><img class="unfilled-heart" src="../../public/empty-heart.png" alt="unfilled heart"></button>
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg" alt="No image available">
     <div class="event-date">
-      <p>5/22</p>
+      <p>{{formatDate(event.event_date)}}</p>
     </div>
-    <h3>SHAWN MENDES: THE VIRTUAL TOUR</h3>
+    <h3>{{event.event_name.toUpperCase()}}</h3>
     <button class="event-details-btn">EVENT DETAILS</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "event-card"
+  name: "EventCard",
+  props: ["event"],
+  methods: {
+    formatDate(date) {
+      let dateArray = date.split(", ");
+      let monthDate = dateArray[1];
+      return monthDate;
+    }
+  }
 }
 </script>
 
@@ -88,7 +96,7 @@ h3 {
 }
 
 p {
-   font-size: 24px;
+   font-size: 21px;
    text-align: center;
    width: 100%;
 }
