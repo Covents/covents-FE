@@ -1,12 +1,12 @@
 <template>
   <div class="event-card">
     <button class="heart-btn"><img class="unfilled-heart" src="../../public/empty-heart.png" alt="unfilled heart"></button>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg" alt="No image available">
+    <img :src="checkForImage(event)" >
     <div class="event-date">
       <p>{{formatDate(event.event_date)}}</p>
     </div>
     <h3>{{event.event_name.toUpperCase()}}</h3>
-    <button class="event-details-btn">EVENT DETAILS</button>
+    <a :href="event.link" target="_blank"><button class="event-details-btn">EVENT DETAILS</button></a>
   </div>
 </template>
 
@@ -19,6 +19,13 @@ export default {
       let dateArray = date.split(", ");
       let monthDate = dateArray[1];
       return monthDate;
+    },
+    checkForImage(event) {
+      if (event.image) {
+        return event.image
+      } else {
+        return 'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
+      }
     }
   }
 }
@@ -44,6 +51,7 @@ img {
   height: 49%;
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid black;
+  object-fit: cover;
 }
 
 h3 {
@@ -52,16 +60,22 @@ h3 {
   margin: 0 3.2em 0 1em;
 }
 
+a {
+  width: 85%;
+  height: 16%;
+  margin-bottom: .5em;
+}
+
 .event-details-btn {
   background: #EF476F;
   border: none;
   color: white;
   font-size: 24px;
   font-family: 'Roboto Condensed', sans-serif;
-  width: 85%;
-  height: 16%;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-  margin-bottom: .5em;
+  cursor: pointer;
 }
 
 .unfilled-heart {
