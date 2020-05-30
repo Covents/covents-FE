@@ -1,12 +1,10 @@
 <template>
   <div class="events-container">
     <h1>coming up:</h1>
-    <EventCard />
-    <EventCard />
-    <EventCard />
-    <EventCard />
-    <EventCard />
-  </div>
+    <div v-bind:key="event.id" v-for="event in events">
+      <EventCard v-bind:event="event"/>
+    </div>
+  </div> 
 </template>
 
 <script>
@@ -15,7 +13,8 @@ export default {
   name: "events-container",
   components: {
     EventCard
-  }
+  },
+  props: ["events"]
 }
 </script>
 
