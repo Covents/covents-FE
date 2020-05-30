@@ -1,8 +1,8 @@
 <template>
   <div class="events-container">
     <h1>coming up:</h1>
-    <div v-bind:key="event.id" v-for="event in events">
-      <EventCard v-bind:event="event"/>
+    <div v-bind:key="eventObj.id" v-for="eventObj in events">
+      <EventCard v-bind:eventObj="eventObj" v-bind:events="events" v-bind:favorites="favorites" @button-clicked="triggerToggle"/>
     </div>
   </div> 
 </template>
@@ -11,10 +11,15 @@
 import EventCard from './EventCard'
 export default {
   name: "events-container",
+  props: ["events", "favorites"],
   components: {
     EventCard
   },
-  props: ["events"]
+  methods: {
+    triggerToggle(e) {
+      this.$emit('toggle-favorite', e)
+    }
+  }
 }
 </script>
 

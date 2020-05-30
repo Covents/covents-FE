@@ -1,30 +1,46 @@
 <template>
   <div class="event-card">
-    <button class="heart-btn"><img class="unfilled-heart" src="../../public/empty-heart.png" alt="unfilled heart"></button>
-    <img :src="checkForImage(event)" >
+    <button class="heart-btn" @click="handleClick" ><img v-bind:id="eventObj.id" :src="checkForFavorite()" alt="unfilled heart" v-bind:favorited="eventObj.favorited" class="heart-image"></button>
+    <img class="main-image" :src="checkForImage(eventObj)">
     <div class="event-date">
-      <p>{{formatDate(event.event_date)}}</p>
+      <p>{{formatDate(eventObj.event_date)}}</p>
     </div>
-    <h3>{{event.event_name.toUpperCase()}}</h3>
-    <a :href="event.link" target="_blank"><button class="event-details-btn">EVENT DETAILS</button></a>
+    <h3>{{eventObj.event_name.toUpperCase()}}</h3>
+    <a :href="eventObj.link" target="_blank"><button class="event-details-btn">EVENT DETAILS</button></a>
   </div>
 </template>
 
 <script>
 export default {
   name: "EventCard",
-  props: ["event"],
+    data() {
+    return {
+      favorited: false
+    }
+  },
+  props: ["eventObj", "favorites"],
   methods: {
     formatDate(date) {
       let dateArray = date.split(", ");
       let monthDate = dateArray[1];
       return monthDate;
     },
-    checkForImage(event) {
-      if (event.image) {
-        return event.image
+    checkForImage(eventObj) {
+      if (eventObj.image) {
+        return eventObj.image
       } else {
         return 'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
+      }
+    },
+    handleClick(e) {
+      this.$emit('button-clicked', e);
+      this.favorited = !this.favorited;
+    },
+    checkForFavorite() {
+      if(this.favorited){
+        return 'https://i.imgur.com/K6QuETQ.png?3'
+      } else {
+        return 'https://i.imgur.com/E7uzSPA.png?3'
       }
     }
   }
@@ -46,7 +62,7 @@ export default {
   position: relative;
 }
 
-img {
+.main-image {
   width: 100%;
   height: 49%;
   border-radius: 8px 8px 0 0;
@@ -82,21 +98,21 @@ a {
   background: #06D6A0;
 }
 
-.unfilled-heart {
-  border: none;
-  height: 4em;
-  width: 4em;
-}
-
 .heart-btn {
   background: none;
   z-index: 1;
   position: absolute;
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3.4em;
   border: none;
   top: -1.7em;
   right: .4em;
+}
+
+.heart-image {
+  border: none;
+  height: 100%;
+  width: 100%;
 }
 
 .event-date {
