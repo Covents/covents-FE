@@ -13,6 +13,11 @@
 <script>
 export default {
   name: "EventCard",
+    data() {
+    return {
+      favorited: true
+    }
+  },
   props: ["eventObj", "events", "favorites"],
   methods: {
     formatDate(date) {
@@ -30,23 +35,6 @@ export default {
     handleClick(e) {
       this.$emit('button-clicked', e)
     }
-    // toggleFavorite(e) {
-    //   e.preventDefault();
-    //   let selectedEvent = this.events.find(
-    //     (eventObj) => eventObj.id === e.target.id
-    //   );
-    //   let matchingEvent = this.favorites.find(
-    //     (eventObj) => eventObj.id === selectedEvent.id
-    //   );
-
-    //   if (matchingEvent) {
-    //     console.log("IF MATCH")
-    //     this.$emit('delete-favorite', selectedEvent);
-    //   } else {
-    //     console.log("IF NO MATCH")
-    //     this.$emit('add-favorite', selectedEvent);
-    //   }
-    // }
   }
 }
 </script>
@@ -117,6 +105,10 @@ a {
   border: none;
   top: -1.7em;
   right: .4em;
+}
+
+.is-favorited {
+  border: 5px solid yellow;
 }
 
 .event-date {

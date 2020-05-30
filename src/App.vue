@@ -78,23 +78,12 @@ export default {
       );
 
       if (matchingEvent) {
-        console.log("IF MATCH");
-        this.deleteFavorite(selectedEvent);
-        // this.$emit('delete-favorite', selectedEvent);
+        this.favorites = this.favorites.filter(favoriteObj => {
+          return favoriteObj.id !== matchingEvent.id
+        })
       } else {
-        console.log("IF NO MATCH")
-        this.addFavorite(selectedEvent)
-      // this.$emit('add-favorite', selectedEvent);
+        this.favorites.push(selectedEvent)
       }
-    },
-
-    addFavorite(selectedEvent) {
-      this.selectedEvent = selectedEvent;
-      console.log(selectedEvent, "ADD")
-    },
-    deleteFavorite(selectedEvent) {
-      this.selectedEvent = selectedEvent;
-      console.log(selectedEvent, "DELETE")
     }
   }
 };
