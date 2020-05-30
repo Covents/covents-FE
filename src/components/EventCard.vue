@@ -1,7 +1,7 @@
 <template>
   <div class="event-card">
-    <button class="heart-btn" @click="handleClick" ><img class="unfilled-heart" v-bind:id="eventObj.id" src="../../public/empty-heart.png" alt="unfilled heart"></button>
-    <img :src="checkForImage(eventObj)" >
+    <button class="heart-btn" @click="handleClick" ><img v-bind:id="eventObj.id" :src="checkForFavorite()" alt="unfilled heart" v-bind:favorited="eventObj.favorited" class="heart-image"></button>
+    <img class="main-image" :src="checkForImage(eventObj)">
     <div class="event-date">
       <p>{{formatDate(eventObj.event_date)}}</p>
     </div>
@@ -15,10 +15,10 @@ export default {
   name: "EventCard",
     data() {
     return {
-      favorited: true
+      favorited: false
     }
   },
-  props: ["eventObj", "events", "favorites"],
+  props: ["eventObj", "favorites"],
   methods: {
     formatDate(date) {
       let dateArray = date.split(", ");
@@ -33,7 +33,15 @@ export default {
       }
     },
     handleClick(e) {
-      this.$emit('button-clicked', e)
+      this.$emit('button-clicked', e);
+      this.favorited = !this.favorited;
+    },
+    checkForFavorite() {
+      if(this.favorited){
+        return 'https://i.imgur.com/K6QuETQ.png?3'
+      } else {
+        return 'https://i.imgur.com/E7uzSPA.png?3'
+      }
     }
   }
 }
@@ -54,7 +62,7 @@ export default {
   position: relative;
 }
 
-img {
+.main-image {
   width: 100%;
   height: 49%;
   border-radius: 8px 8px 0 0;
@@ -90,25 +98,21 @@ a {
   background: #06D6A0;
 }
 
-.unfilled-heart {
-  border: none;
-  height: 4em;
-  width: 4em;
-}
-
 .heart-btn {
   background: none;
   z-index: 1;
   position: absolute;
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3.4em;
   border: none;
   top: -1.7em;
   right: .4em;
 }
 
-.is-favorited {
-  border: 5px solid yellow;
+.heart-image {
+  border: none;
+  height: 100%;
+  width: 100%;
 }
 
 .event-date {
