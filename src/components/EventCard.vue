@@ -1,6 +1,6 @@
 <template>
   <div class="event-card">
-    <button class="heart-btn" @click="toggleFavorite" ><img class="unfilled-heart" v-bind:id="eventObj.id" src="../../public/empty-heart.png" alt="unfilled heart"></button>
+    <button class="heart-btn" @click="handleClick" ><img class="unfilled-heart" v-bind:id="eventObj.id" src="../../public/empty-heart.png" alt="unfilled heart"></button>
     <img :src="checkForImage(eventObj)" >
     <div class="event-date">
       <p>{{formatDate(eventObj.event_date)}}</p>
@@ -27,21 +27,26 @@ export default {
         return 'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
       }
     },
-    toggleFavorite(e) {
-      e.preventDefault();
-      let selectedEvent = this.events.find(
-        (eventObj) => eventObj.id === e.target.id
-      );
-      let matchingEvent = this.favorites.find(
-        (eventObj) => eventObj.id === selectedEvent.id
-      );
-
-      if (matchingEvent) {
-        console.log("DELETE FAVORITE")
-      } else {
-        console.log("ADD FAVORITE")
-      }
+    handleClick(e) {
+      this.$emit('button-clicked', e)
     }
+    // toggleFavorite(e) {
+    //   e.preventDefault();
+    //   let selectedEvent = this.events.find(
+    //     (eventObj) => eventObj.id === e.target.id
+    //   );
+    //   let matchingEvent = this.favorites.find(
+    //     (eventObj) => eventObj.id === selectedEvent.id
+    //   );
+
+    //   if (matchingEvent) {
+    //     console.log("IF MATCH")
+    //     this.$emit('delete-favorite', selectedEvent);
+    //   } else {
+    //     console.log("IF NO MATCH")
+    //     this.$emit('add-favorite', selectedEvent);
+    //   }
+    // }
   }
 }
 </script>

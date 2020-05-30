@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <EventsContainer v-bind:events="events" v-bind:favorites="favorites" />
+    <EventsContainer v-bind:events="events" v-bind:favorites="favorites" @toggle-favorite="toggleFavorite" />
   </div>
 </template>
 
@@ -64,7 +64,38 @@ export default {
         },
       ],
       favorites: [],
+      selectedEvent: ''
     };
+  },
+  methods: {
+    toggleFavorite(e) {
+      e.preventDefault();
+      let selectedEvent = this.events.find(
+        (eventObj) => eventObj.id === e.target.id
+      );
+      let matchingEvent = this.favorites.find(
+        (eventObj) => eventObj.id === selectedEvent.id
+      );
+
+      if (matchingEvent) {
+        console.log("IF MATCH");
+        this.deleteFavorite(selectedEvent);
+        // this.$emit('delete-favorite', selectedEvent);
+      } else {
+        console.log("IF NO MATCH")
+        this.addFavorite(selectedEvent)
+      // this.$emit('add-favorite', selectedEvent);
+      }
+    },
+
+    addFavorite(selectedEvent) {
+      this.selectedEvent = selectedEvent;
+      console.log(selectedEvent, "ADD")
+    },
+    deleteFavorite(selectedEvent) {
+      this.selectedEvent = selectedEvent;
+      console.log(selectedEvent, "DELETE")
+    }
   }
 };
 </script>
