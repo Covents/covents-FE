@@ -1,30 +1,45 @@
 <template>
   <div class="event-card">
-    <button class="heart-btn"><img class="unfilled-heart" src="../../public/empty-heart.png" alt="unfilled heart"></button>
-    <img :src="checkForImage(event)" >
+    <button class="heart-btn" @click="toggleFavorite" ><img class="unfilled-heart" v-bind:id="eventObj.id" src="../../public/empty-heart.png" alt="unfilled heart"></button>
+    <img :src="checkForImage(eventObj)" >
     <div class="event-date">
-      <p>{{formatDate(event.event_date)}}</p>
+      <p>{{formatDate(eventObj.event_date)}}</p>
     </div>
-    <h3>{{event.event_name.toUpperCase()}}</h3>
-    <a :href="event.link" target="_blank"><button class="event-details-btn">EVENT DETAILS</button></a>
+    <h3>{{eventObj.event_name.toUpperCase()}}</h3>
+    <a :href="eventObj.link" target="_blank"><button class="event-details-btn">EVENT DETAILS</button></a>
   </div>
 </template>
 
 <script>
 export default {
   name: "EventCard",
-  props: ["event"],
+  props: ["eventObj", "events", "favorites"],
   methods: {
     formatDate(date) {
       let dateArray = date.split(", ");
       let monthDate = dateArray[1];
       return monthDate;
     },
-    checkForImage(event) {
-      if (event.image) {
-        return event.image
+    checkForImage(eventObj) {
+      if (eventObj.image) {
+        return eventObj.image
       } else {
         return 'https://upload.wikimedia.org/wikipedia/commons/1/15/No_image_available_600_x_450.svg'
+      }
+    },
+    toggleFavorite(e) {
+      e.preventDefault();
+      let selectedEvent = this.events.find(
+        (eventObj) => eventObj.id === e.target.id
+      );
+      let matchingEvent = this.favorites.find(
+        (eventObj) => eventObj.id === selectedEvent.id
+      );
+
+      if (matchingEvent) {
+        console.log("DELETE FAVORITE")
+      } else {
+        console.log("ADD FAVORITE")
       }
     }
   }
