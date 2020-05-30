@@ -18,7 +18,7 @@ import CalendarContainer from './CalendarContainer';
 import YourEvents from './YourEvents';
 
 export default {
-    name: "nav",
+    name: "NavBar",
     components: {
         Search,
         CalendarContainer,

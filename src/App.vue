@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Nav />
+    <NavBar />
     <EventsContainer v-bind:events="events" v-bind:favorites="favorites" @toggle-favorite="toggleFavorite" />
   </div>
 </template>
 
 <script>
-import Nav from "./components/Nav";
+import NavBar from "./components/NavBar";
 import EventsContainer from "./components/EventsContainer";
 export default {
   name: "app",
   components: {
-    Nav,
+    NavBar,
     EventsContainer,
   },
   data() {
