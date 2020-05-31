@@ -1,5 +1,8 @@
-<template> 
-    <h4>{{checkForEvents(eventObj)}}</h4>
+<template>
+  <a :href="eventObj.link" target="_blank">
+    <h4>{{ this.eventObj.event_name }}</h4>
+    <p>{{ this.eventObj.event_date }}</p>
+  </a>
 </template>
 
 <script>
@@ -7,15 +10,29 @@ export default {
   name: "saved-event",
   props: ["favorites", "eventObj"],
   methods: {
-    checkForEvents() {
+    checkForFavorites() {
       if (this.favorites.length) {
-          return `${this.eventObj.event_name}`;
-      } else {
-        return "You have no saved events!";
+        console.log("TRUE");
+        return true;
       }
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+</style>
