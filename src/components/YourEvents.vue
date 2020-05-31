@@ -1,30 +1,30 @@
 <template>
-    <div class="your-events">
-        <h2>YOUR EVENTS:</h2>
-        <h4>You have no saved events!</h4>
+  <div class="your-events">
+    <h2>YOUR EVENTS:</h2>
+    <div v-bind:key="eventObj.id" v-for="eventObj in favorites" >
+      <SavedEvent v-bind:eventObj="eventObj" v-bind:favorites="favorites"/>
     </div>
+  </div>
 </template>
 
 <script>
+import SavedEvent from './SavedEvent'
 export default {
-    name: "your-events",
-    methods: {
-        checkForEvents() {
-        }
-    },
-    mounted() {
-        this.checkForEvents()
-    }
-}
+  name: "your-events",
+  props: ["favorites"],
+  components: {
+    SavedEvent,
+  },
+};
 </script>
 
 <style scoped>
-    h2 {
-        color: #ffffff;
-        margin: 20px;
-    }
-    h4 {
-        color: #ffffff;
-        text-align: center;
-    }
+h2 {
+  color: #ffffff;
+  margin: 20px;
+}
+h4 {
+  color: #ffffff;
+  text-align: center;
+}
 </style>
