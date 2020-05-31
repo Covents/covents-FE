@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar />
+    <NavBar v-bind:favorites="favorites"/>
     <EventsContainer v-bind:events="events" v-bind:favorites="favorites" @toggle-favorite="toggleFavorite" />
   </div>
 </template>

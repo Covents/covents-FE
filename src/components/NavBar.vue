@@ -8,7 +8,7 @@
         </button>
         <Search />
         <CalendarContainer />
-        <YourEvents />
+        <YourEvents v-bind:favorites="favorites"/>
     </nav>
 </template>
 
@@ -19,6 +19,7 @@ import YourEvents from './YourEvents';
 
 export default {
     name: "NavBar",
+    props: ["favorites"],
     components: {
         Search,
         CalendarContainer,
