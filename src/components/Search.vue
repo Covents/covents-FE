@@ -14,7 +14,7 @@ export default {
 <style scoped>
     .search-btn {
         background: #EF476F;
-        border: 1px solid #EF476F;
+        border: 1px solid rgb(243, 88, 125);
         border-radius: 0 10px 10px 0;
         height: 35px;
         width: 35px;
