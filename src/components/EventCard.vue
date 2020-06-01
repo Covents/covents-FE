@@ -11,9 +11,9 @@
     </button>
     <img class="main-image" :src="checkForImage(eventObj)" />
     <div class="event-date">
-      <p>{{ formatDate(eventObj.event_date) }}</p>
+      <p>{{ formatDate(eventObj.date) }}</p>
     </div>
-    <h3>{{ eventObj.event_name.toUpperCase() }}</h3>
+    <h3>{{ eventObj.name.toUpperCase() }}</h3>
     <a :href="eventObj.link" target="_blank"
       ><button class="event-details-btn">EVENT DETAILS</button></a
     >

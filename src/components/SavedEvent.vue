@@ -1,7 +1,7 @@
 <template>
   <a :href="eventObj.link" target="_blank">
-    <h4>{{ this.eventObj.event_name }}</h4>
-    <p>{{ this.eventObj.event_date }}</p>
+    <h4>{{ this.eventObj.name }}</h4>
+    <p>{{ this.eventObj.date }}</p>
   </a>
 </template>
 
@@ -12,7 +12,6 @@ export default {
   methods: {
     checkForFavorites() {
       if (this.favorites.length) {
-        console.log("TRUE");
         return true;
       }
     },
