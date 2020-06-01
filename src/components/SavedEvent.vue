@@ -1,7 +1,7 @@
 <template>
   <a :href="eventObj.link" target="_blank">
     <h4>{{ this.eventObj.event_name }}</h4>
-    <p>{{ this.eventObj.event_date }}</p>
+    <p>{{ this.eventObj.date }}</p>
   </a>
 </template>
 
