@@ -3,7 +3,7 @@ import EventCard from "../../src/components/EventCard.vue";
 
 let wrapper;
 
-describe( "EventCard", () => {
+describe("EventCard", () => {
 
   beforeEach(() => {
     wrapper = shallowMount(EventCard, {
@@ -49,5 +49,31 @@ describe( "EventCard", () => {
 
   it('should render the event card div', () => {
     expect(wrapper.classes()).toContain('event-card');
+  });
+
+  it('should render the heart button and heart image', () => {
+    const button = wrapper.find('.heart-btn')
+    const buttonImg = wrapper.find('.heart-image')
+
+    expect(button.exists()).toBe(true)
+    expect(buttonImg.exists()).toBe(true)
+  });
+
+  it('should render the event image', () => {
+    const image = wrapper.find('.main-image')
+
+    expect(image.exists()).toBe(true)
+  });
+
+  it('should render the event date', () => {
+    const date = wrapper.find('.event-date')
+
+    expect(date.exists()).toBe(true)
+  });
+
+  it('should render the event details button', () => {
+    const detailsBtn = wrapper.find('.event-details-btn')
+
+    expect(detailsBtn.exists()).toBe(true)
   })
 });
