@@ -1,7 +1,7 @@
 <template>
     <nav class="nav-bar">
         <button class="home-btn">
-            <router-link to="/">
+            <router-link to="/home">
                 <h1>covents</h1>
                 <h4>SOCIAL / DISTANT</h4>
             </router-link>
