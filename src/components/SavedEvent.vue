@@ -1,5 +1,5 @@
 <template>
-  <a :href="eventObj.link" target="_blank">
+  <a class="event-link" :href="eventObj.link" target="_blank">
     <h4>{{ this.eventObj.name }}</h4>
     <p>{{ this.eventObj.date }}</p>
   </a>
