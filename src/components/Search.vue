@@ -19,6 +19,7 @@ export default {
         height: 35px;
         width: 35px;
         padding: 2px;
+        cursor: pointer;
     }
 
     .search-icon {

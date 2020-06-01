@@ -38,4 +38,14 @@ h4 {
   color: #ffffff;
   text-align: center;
 }
+
+.your-events {
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.your-events::-webkit-scrollbar {
+  width: 0;
+  background: #ffffff;
+}
 </style>

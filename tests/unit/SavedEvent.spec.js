@@ -40,7 +40,7 @@ describe("SavedEvent", () => {
   });
 
   it("should render the text for the event name and date", () => {
-    expect(wrapper.text()).toBe("Zayn Malik Party Sun, May 31, 2020");
+    expect(wrapper.text()).toBe("ZAYN MALIK PARTY Sun, May 31, 2020");
   });
 
   it("should render with a link to the external event page", () => {

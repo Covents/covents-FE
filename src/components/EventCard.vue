@@ -83,6 +83,10 @@ h3 {
   font-size: 24px;
   font-weight: normal;
   margin: 0 3.2em 0 1em;
+  max-height: 27%;
+  max-width: 85%;
+  overflow: hidden;
+  white-space: wrap;
 }
 
 a {
@@ -133,8 +137,8 @@ a {
 
 .event-date {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   background: #06d6a0;
   z-index: 2;
   position: absolute;

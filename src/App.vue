@@ -199,4 +199,8 @@ p {
   display: flex;
   flex-flow: row nowrap;
 }
+
+body,html{
+  height: 100%;
+}
 </style>

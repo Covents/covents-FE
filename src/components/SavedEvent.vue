@@ -1,8 +1,10 @@
 <template>
-  <a class="event-link" :href="eventObj.link" target="_blank">
-    <h4>{{ this.eventObj.name }}</h4>
-    <p>{{ this.eventObj.date }}</p>
-  </a>
+  <div>
+    <a class="event-link" :href="eventObj.link" target="_blank">
+      <h4>{{ this.eventObj.name.toUpperCase() }}</h4>
+      <p>{{ this.eventObj.date }}</p>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -23,7 +25,6 @@ export default {
 a {
   text-decoration: none;
   color: #ffffff;
-  margin-top: 10px;
 }
 
 a:hover {
@@ -31,7 +32,20 @@ a:hover {
 }
 
 p {
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+div {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
 }
 </style>

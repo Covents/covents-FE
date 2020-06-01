@@ -1,7 +1,7 @@
 <template>
     <nav class="nav-bar">
         <button class="home-btn">
-            <router-link to="/">
+            <router-link to="/home">
                 <h1>covents</h1>
                 <h4>SOCIAL / DISTANT</h4>
             </router-link>
@@ -31,11 +31,12 @@ export default {
 <style scoped>
     .nav-bar {
        background: #118AB2;
-       height: 100vh;
+       height: 100%;
        width: 22%;
        display: flex;
        flex-flow: column nowrap;
        align-items: center;
+       position: fixed;
     }
 
     .home-btn {
