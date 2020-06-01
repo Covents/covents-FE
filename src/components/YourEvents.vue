@@ -23,7 +23,6 @@ export default {
   },
   checkForFavorites() {
     if (this.favorites.length) {
-      console.log("TR");
       return true;
     }
   },

@@ -19,7 +19,7 @@ export default {
       events: [
               {
           "id": "184",
-          "event_name": "Harry Styles FINE LINE",
+          "name": "Harry Styles FINE LINE",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F100605488%2F445247269428%2F1%2Foriginal.20200510-070845?w=438&auto=format%2Ccompress&q=75&sharp=10&rect=121%2C0%2C438%2C219&s=e38a4a925a8153d69b12cd82f9e5f88b",
           "date": "Sat, Jun 20, 2020",
           "time": "12:00 PM PDT",
@@ -27,7 +27,7 @@ export default {
         },
         {
           "id": "185",
-          "event_name": "#VirtualDayParties & #VirtualVS",
+          "name": "#VirtualDayParties & #VirtualVS",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101933614%2F254238099628%2F1%2Foriginal.20200527-013807?w=500&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C141%2C500%2C250&s=534313a03fd8c142b3b0863026d35472",
           "date": "Thu, Jun 4, 2020",
           "time": "5:00 PM CDT",
@@ -35,7 +35,7 @@ export default {
         },
         {
           "id": "186",
-          "event_name": "DCJazzFest From Home Series",
+          "name": "DCJazzFest From Home Series",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F99457776%2F119015619107%2F1%2Foriginal.20200424-194945?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=382%2C0%2C1068%2C534&s=825de94e15775c953040327b94efe728",
           "date": "Sat, Jun 6, 2020",
           "time": "7:00 PM EDT",
@@ -43,7 +43,7 @@ export default {
         },
         {
           "id": "187",
-          "event_name": "Why don\u2019t we and one direction stay at home concert",
+          "name": "Why don\u2019t we and one direction stay at home concert",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F100401476%2F444603329180%2F1%2Foriginal.20200507-071246?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C549%2C828%2C414&s=3932df80f9c6d294bdce1c522c8bf104",
           "date": "Wed, Jun 3, 2020",
           "time": "1:00 PM CDT",
@@ -51,7 +51,7 @@ export default {
         },
         {
           "id": "188",
-          "event_name": "Why Don\u2019t We Stay Home concert",
+          "name": "Why Don\u2019t We Stay Home concert",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F100390776%2F442549010914%2F1%2Foriginal.20200507-024227?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C349%2C1080%2C540&s=07d9b456ca4d549b313b09c103107f5c",
           "date": "Sat, Jun 6, 2020",
           "time": "5:30 PM EDT",
@@ -59,7 +59,7 @@ export default {
         },
         {
           "id": "189",
-          "event_name": "SMTT: At Home",
+          "name": "SMTT: At Home",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F99048928%2F441341652152%2F1%2Foriginal.20200420-045730?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C6%2C2386%2C1193&s=125aeb816d89ca90c561a60d4f81fa35",
           "date": "Sat, Jun 6, 2020",
           "time": "7:00 PM EDT",
@@ -67,7 +67,7 @@ export default {
         },
         {
           "id": "190",
-          "event_name": "Romance Tour At Home",
+          "name": "Romance Tour At Home",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F100168898%2F444556407008%2F1%2Foriginal.20200504-211355?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C169%2C736%2C368&s=20ef2835c87dc6ace4ca3a6584d22d19",
           "date": "Tue, Jun 2, 2020",
           "time": "8:00 PM CDT",
@@ -75,7 +75,7 @@ export default {
         },
         {
           "id": "191",
-          "event_name": "Why don't we online festival!",
+          "name": "Why don't we online festival!",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101174004%2F447205590384%2F1%2Foriginal.20200517-103926?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=9a01adce574222c486df36564a7d5190",
           "date": "Fri, Jun 5, 2020",
           "time": "9:30 PM CEST",
@@ -83,7 +83,7 @@ export default {
         },
         {
           "id": "192",
-          "event_name": "QUARANTINGO! Virtual Music Bingo w/ Pour Entertainment",
+          "name": "QUARANTINGO! Virtual Music Bingo w/ Pour Entertainment",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F98300940%2F307892959837%2F1%2Foriginal.20200408-203009?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C12%2C1080%2C540&s=2a0e87d5e72bb48631a350126b0d772f",
           "date": "Sun, Jun 7, 2020",
           "time": "2:00 PM EDT",
@@ -91,7 +91,7 @@ export default {
         },
         {
           "id": "193",
-          "event_name": "In Session: Understanding music publishing",
+          "name": "In Session: Understanding music publishing",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101445780%2F365760079899%2F1%2Foriginal.20200520-155720?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C41%2C1920%2C960&s=0c81377a62b2ed39e11932cf4d909aad",
           "date": "Thu, Jun 4, 2020",
           "time": "1:00 PM EDT",
@@ -99,7 +99,7 @@ export default {
         },
         {
           "id": "194",
-          "event_name": "Harry Styles tour at home",
+          "name": "Harry Styles tour at home",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101257944%2F444806640466%2F1%2Foriginal.20200518-173139?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C35%2C1440%2C720&s=1c221f76ee77122ef2cf72e2f8933791",
           "date": "Mon, Jun 8, 2020",
           "time": "5:00 PM EDT",
@@ -107,7 +107,7 @@ export default {
         },
         {
           "id": "195",
-          "event_name": "One direction",
+          "name": "One direction",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101085310%2F440834339650%2F1%2Foriginal.20200515-164221?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=d06be91d5837cef41119729e8f37f8a3",
           "date": "Mon, Jun 1, 2020",
           "time": "7:00 PM BST",
@@ -115,7 +115,7 @@ export default {
         },
         {
           "id": "196",
-          "event_name": "Purpose Tour Virtual Concert",
+          "name": "Purpose Tour Virtual Concert",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101163992%2F447173388538%2F1%2Foriginal.20200517-004456?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C627%2C828%2C414&s=781105e8f4c46675451faea2eded08aa",
           "date": "Sat, Jun 6, 2020",
           "time": "10:00 PM CEST",
@@ -123,7 +123,7 @@ export default {
         },
         {
           "id": "197",
-          "event_name": "Why Don\u2019t We Online Concert !!",
+          "name": "Why Don\u2019t We Online Concert !!",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F100822806%2F446328596098%2F1%2Foriginal.20200512-232858?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C22%2C720%2C360&s=7d154e6f55cceb161ccddcb7191fb30e",
           "date": "Tue, Jun 2, 2020",
           "time": "2:00 PM CDT",
@@ -131,7 +131,7 @@ export default {
         },
         {
           "id": "198",
-          "event_name": "No Shame OnLine Tour",
+          "name": "No Shame OnLine Tour",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101717152%2F444637416130%2F1%2Foriginal.20200524-033233?w=300&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C300%2C150&s=1b22c45c4b5d957bcad25961bea232c4",
           "date": "Fri, Jun 12, 2020",
           "time": "8:00 PM BST",
@@ -139,7 +139,7 @@ export default {
         },
         {
           "id": "199",
-          "event_name": "Up All Night Experience",
+          "name": "Up All Night Experience",
           "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101162644%2F3358207041%2F1%2Foriginal.20200516-234622?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1080%2C540&s=251e37fd50a33c5c488bcaacc1e2e97e",
           "date": "Sat, Jun 6, 2020",
           "time": "12:00 PM CDT",
