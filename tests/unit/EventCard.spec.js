@@ -1,9 +1,12 @@
 import { shallowMount } from "@vue/test-utils";
 import EventCard from "../../src/components/EventCard.vue";
 
-describe("EventCard", () => {
-  it("renders the event card on page load", () => {
-    const wrapper = shallowMount(EventCard, {
+let wrapper;
+
+describe( "EventCard", () => {
+
+  beforeEach(() => {
+    wrapper = shallowMount(EventCard, {
       propsData: { eventObj:  {
         id: "1",
         event_name: "Zayn Malik Party",
@@ -30,6 +33,21 @@ describe("EventCard", () => {
           "https://www.eventbrite.co.uk/e/zayn-malik-party-tickets-104380292264?aff=ebdssbonlinesearch",
       }]
     }});
-    expect(wrapper.exists()).toBe(true);
+  });
+
+  afterEach(() => {
+    wrapper.destroy();
   })
-})
+
+  it('should render the event card on page load', () => {
+    expect(wrapper.exists()).toBe(true);    
+  });
+
+  it('should render the text for the event name, date, and event details button', () => {
+    expect(wrapper.text()).toBe('May 31 ZAYN MALIK PARTY EVENT DETAILS')
+  });
+
+  it('should render the event card div', () => {
+    expect(wrapper.classes()).toContain('event-card');
+  })
+});
