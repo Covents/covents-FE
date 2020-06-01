@@ -39,5 +39,6 @@ h1 {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  margin-left: 22%;
 }
 </style>

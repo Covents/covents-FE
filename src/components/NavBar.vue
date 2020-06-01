@@ -31,11 +31,12 @@ export default {
 <style scoped>
     .nav-bar {
        background: #118AB2;
-       height: 100vh;
+       height: 100%;
        width: 22%;
        display: flex;
        flex-flow: column nowrap;
        align-items: center;
+       position: fixed;
     }
 
     .home-btn {
