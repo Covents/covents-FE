@@ -47,7 +47,7 @@ export default {
       this.keyword = keyword;
       axios.get(`https://cors-anywhere.herokuapp.com/https://fierce-earth-48309.herokuapp.com/api/v1/resources/event_keyword?keyword=${keyword}`)
         .then(res => this.results = res.data)
-        .catch(err => console.log(err))
+        .catch(err => this.handleError(err))
     },
     searchByDate(selectedDate) {
       let stringDate = selectedDate.toString()
@@ -57,13 +57,15 @@ export default {
       this.keyword = monthDate;
       axios.get(`https://cors-anywhere.herokuapp.com/https://fierce-earth-48309.herokuapp.com/api/v1/resources/events/when?date=${monthDate}`)
         .then(res => this.results = res.data)
-        .catch(err => handleError(err))
+        .catch(err => this.handleError(err))
     },
     clearResults() {
       this.results = []
     },
     handleError(err) {
-      console.log(err)
+      console.log(err);
+      this.clearResults();
+      alert('No results found!')
     }
   },
     created() {
