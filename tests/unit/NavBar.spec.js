@@ -1,5 +1,9 @@
 import { shallowMount } from "@vue/test-utils";
 import NavBar from "../../src/components/NavBar.vue";
+import router from '@/router'
+import Vue from 'vue'
+
+Vue.use(router)
 
 let wrapper;
 
