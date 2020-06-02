@@ -1,8 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import CalendarContainer from "../../src/components/CalendarContainer.vue";
 
-
-
 let wrapper;
 
 describe("CalendarContainer", () => {

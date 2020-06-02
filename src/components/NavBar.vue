@@ -1,13 +1,13 @@
 <template>
     <nav class="nav-bar">
-        <button class="home-btn">
+        <button @click="navigateHome" class="home-btn">
             <router-link to="/home">
                 <h1>covents</h1>
                 <h4>SOCIAL / DISTANT</h4>
             </router-link>
         </button>
-        <Search />
-        <CalendarContainer />
+        <Search v-on:submit-search="submitSearch"/>
+        <CalendarContainer v-on:handle-date="handleDate"/>
         <YourEvents v-bind:favorites="favorites"/>
     </nav>
 </template>
@@ -24,6 +24,17 @@ export default {
         Search,
         CalendarContainer,
         YourEvents
+    },
+    methods: {
+        submitSearch(keyword) {
+            this.$emit('search-events', keyword);
+        },
+        navigateHome() {
+            this.$emit('clear-results')
+        },
+        handleDate(selectedDate) {
+            this.$emit('search-by-date', selectedDate)
+        }
     }
 }
 </script>
