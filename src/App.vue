@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar v-on:search-events="searchEvents" v-bind:favorites="favorites"/>
-    <EventsContainer v-bind:events="events" v-bind:favorites="favorites" @toggle-favorite="toggleFavorite" />
+    <NavBar v-on:search-events="searchEvents" v-bind:favorites="favorites" v-on:clear-results="clearResults" />
+    <EventsContainer v-bind:events="events" v-bind:results="results" v-bind:keyword="keyword" v-bind:favorites="favorites" @toggle-favorite="toggleFavorite" />
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
       events: [],
       results: [],
       favorites: [],
-      selectedEvent: ''
+      selectedEvent: '',
+      keyword: ''
     };
   },
   methods: {
@@ -42,10 +43,13 @@ export default {
       }
     },
     searchEvents(keyword) {
-      console.log(keyword)
+      this.keyword = keyword;
       axios.get(`https://cors-anywhere.herokuapp.com/https://fierce-earth-48309.herokuapp.com/api/v1/resources/event_keyword?keyword=${keyword}`)
         .then(res => this.results = res.data)
         .catch(err => console.log(err))
+    },
+    clearResults() {
+      this.results = []
     }
   },
     created() {
