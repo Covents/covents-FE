@@ -1,13 +1,26 @@
 <template>
-    <form>
-        <input class="search-input" type="text" placeholder="search events..." />
+    <form @submit.prevent="handleSubmit">
+        <input class="search-input" type="text" v-model="keyword" placeholder="search events..." />
         <button class="search-btn"><img class="search-icon" src="../../public/search.png" alt="search button"/></button>
     </form>
 </template>
 
 <script>
 export default {
-    name: "search"
+    name: "search",
+    data() {
+        return {
+            keyword: ''
+        }
+    },
+    methods: {
+        handleSubmit(e) {
+            e.preventDefault();
+            let keyword = this.keyword;
+            this.$emit('submit-search', keyword);
+            this.keyword="";
+        }
+    }
 }
 </script>
 

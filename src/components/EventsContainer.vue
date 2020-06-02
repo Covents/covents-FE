@@ -11,7 +11,7 @@
 import EventCard from './EventCard'
 export default {
   name: "events-container",
-  props: ["events", "favorites"],
+  props: ["events", "favorites", "results"],
   components: {
     EventCard
   },

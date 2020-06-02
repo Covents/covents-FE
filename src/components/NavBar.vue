@@ -6,7 +6,7 @@
                 <h4>SOCIAL / DISTANT</h4>
             </router-link>
         </button>
-        <Search />
+        <Search v-on:submit-search="submitSearch"/>
         <CalendarContainer />
         <YourEvents v-bind:favorites="favorites"/>
     </nav>
@@ -24,6 +24,11 @@ export default {
         Search,
         CalendarContainer,
         YourEvents
+    },
+    methods: {
+        submitSearch(keyword) {
+            this.$emit('search-events', keyword);
+        }
     }
 }
 </script>
