@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-container">
+  <div @click="selectDate" class="calendar-container">
     <v-date-picker
       mode="single"
       color="blue"
@@ -46,6 +46,14 @@ export default {
       },
     };
   },
+  methods: {
+    selectDate() {
+      let selectedDate = this.selectedDate;
+      if (selectedDate) {
+        this.$emit('handle-date', selectedDate)
+      }
+    }
+  }
 };
 </script>
 

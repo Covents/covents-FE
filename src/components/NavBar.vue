@@ -7,7 +7,7 @@
             </router-link>
         </button>
         <Search v-on:submit-search="submitSearch"/>
-        <CalendarContainer />
+        <CalendarContainer v-on:handle-date="handleDate"/>
         <YourEvents v-bind:favorites="favorites"/>
     </nav>
 </template>
@@ -31,6 +31,9 @@ export default {
         },
         navigateHome() {
             this.$emit('clear-results')
+        },
+        handleDate(selectedDate) {
+            this.$emit('search-by-date', selectedDate)
         }
     }
 }
