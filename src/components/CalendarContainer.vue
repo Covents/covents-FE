@@ -47,9 +47,9 @@ export default {
     };
   },
   methods: {
-    selectDate() {
+    selectDate(e) {
       let selectedDate = this.selectedDate;
-      if (selectedDate) {
+      if (selectedDate && e.target.classList.contains('vc-day-content')) {
         this.$emit('handle-date', selectedDate)
       }
     }
