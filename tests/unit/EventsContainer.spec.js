@@ -16,7 +16,7 @@ describe("EventsContainer", () => {
         link:
           "https://www.eventbrite.co.uk/e/zayn-malik-party-tickets-104380292264?aff=ebdssbonlinesearch",
       }],
-      events: [ {
+      events: [{
         id: "1",
         name: "Zayn Malik Party",
         image:
@@ -24,7 +24,9 @@ describe("EventsContainer", () => {
         date: "Sun, May 31, 2020",
         link:
           "https://www.eventbrite.co.uk/e/zayn-malik-party-tickets-104380292264?aff=ebdssbonlinesearch",
-      }]
+      }],
+      results: [],
+      keyword: "Zayn"
     }});
   });
 

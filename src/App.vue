@@ -52,10 +52,11 @@ export default {
     searchByDate(selectedDate) {
       let stringDate = selectedDate.toString()
       let dateArray = stringDate.split(" ");
-      let monthDate = `${dateArray[1]} ${dateArray[2]}`;
+      let formattedDay = parseInt(dateArray[2], 10)
+      let monthDate = `${dateArray[1]} ${formattedDay}`;
       this.selectedDate = monthDate;
       this.keyword = monthDate;
-      axios.get(`https://cors-anywhere.herokuapp.com/https://fierce-earth-48309.herokuapp.com/api/v1/resources/events/when?date=${monthDate}`)
+      axios.get(`https://cors-anywhere.herokuapp.com/https://fierce-earth-48309.herokuapp.com/api/v1/resources/events/when?date=${monthDate},`)
         .then(res => this.results = res.data)
         .catch(err => this.handleError(err))
     },
