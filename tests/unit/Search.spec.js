@@ -32,6 +32,4 @@ describe("Search", () => {
       '<input type="text" placeholder="search events..." class="search-input">'
     );
   });
-
-  //we still need a test here to check that the input field can be typed into, but I wanted to wait until functionality is built out more to make sure we're testing the right values
 });

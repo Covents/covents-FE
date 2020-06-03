@@ -3,7 +3,7 @@
     <button class="heart-btn" @click="handleClick">
       <img
         v-bind:id="eventObj.id"
-        :src="checkForFavorite()"
+        :src="checkForFavorite(eventObj.id)"
         alt="unfilled heart"
         v-bind:favorited="eventObj.favorited"
         class="heart-image"
@@ -46,8 +46,8 @@ export default {
       this.$emit("button-clicked", e);
       this.favorited = !this.favorited;
     },
-    checkForFavorite() {
-      if (this.favorited) {
+    checkForFavorite(id) {
+      if (this.favorites.find(eventObj => eventObj.id === parseInt(id))) {
         return "https://i.imgur.com/K6QuETQ.png?3";
       } else {
         return "https://i.imgur.com/E7uzSPA.png?3";
