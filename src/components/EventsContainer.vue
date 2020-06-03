@@ -1,44 +1,55 @@
 <template>
-  <div v-if="this.results.length && this.keyword.length" class="events-container">
+  <div
+    v-if="this.results.length && this.keyword.length"
+    class="events-container"
+  >
     <div class="results-header">
       <h1>results for:</h1>
-      <h2>"{{this.keyword}}"</h2>
+      <h2>"{{ this.keyword }}"</h2>
     </div>
     <div v-bind:key="eventObj.id" v-for="eventObj in results">
-      <EventCard v-bind:eventObj="eventObj" v-bind:favorites="favorites" @button-clicked="triggerToggle"/>
+      <EventCard
+        v-bind:eventObj="eventObj"
+        v-bind:favorites="favorites"
+        @button-clicked="triggerToggle"
+      />
     </div>
   </div>
 
   <div v-else class="events-container">
     <h1>coming up:</h1>
     <div v-bind:key="eventObj.id" v-for="eventObj in events">
-      <EventCard v-bind:eventObj="eventObj" v-bind:events="events" v-bind:favorites="favorites" @button-clicked="triggerToggle"/>
+      <EventCard
+        v-bind:eventObj="eventObj"
+        v-bind:events="events"
+        v-bind:favorites="favorites"
+        @button-clicked="triggerToggle"
+      />
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
-import EventCard from './EventCard'
+import EventCard from "./EventCard";
 export default {
   name: "events-container",
   props: ["events", "favorites", "results", "keyword"],
   components: {
-    EventCard
+    EventCard,
   },
   methods: {
     triggerToggle(e) {
-      this.$emit('toggle-favorite', e)
-    }
-  }
-}
+      this.$emit("toggle-favorite", e);
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 h1 {
-  color: #EF476F;
+  color: #ef476f;
   font-size: 3.5em;
-  margin-top: .18em;
+  margin-top: 0.18em;
   width: 100%;
   text-align: center;
 }
@@ -66,5 +77,4 @@ h2 {
   padding: 0;
   max-height: 20%;
 }
-
 </style>
