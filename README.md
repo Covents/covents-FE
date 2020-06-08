@@ -13,6 +13,11 @@ COVENTS is an app providing easy access to virtual events happening around the g
 [Kelly Bard - Back End](https://github.com/KellyIB)
 
 
+### Slide deck used at capstone presentation
+
+  - https://docs.google.com/presentation/d/1FwUGeC-TW4hBnwJTv6_vczn0SngD5CpbFQ5CY2KzNMI/edit?ts=5ed955f0#slide=id.g897d938f84_0_5
+  
+
 ### Deployed App
 [c o v e n t s](https://covents.netlify.app/#/)
 
